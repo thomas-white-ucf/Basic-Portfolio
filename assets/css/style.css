@@ -1,9 +1,7 @@
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*          Starting with floats and clearfix
 */
-*, *::after, *::before {
-    box-sizing: border-box;
-}
+
 .floatleft {
     float: left;
 }
@@ -12,30 +10,31 @@
 }
 .clearfix::after {
     content: " ";
-    /* overflow: auto; */
+    overflow: auto;
     display: block;
     clear: both;
 }
-* {
-  box-sizing: border-box;
-}
-
-/* .absoluteposition {
-    position: absolute;
-}
-.customrelativeposition {
-    position: relative;
-    top: 0;
-    left: 0;
-} */
-.fixednameposition {
-    position: fixed;
-    top: 0;
-    right: 1200px;
-}
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*              HTML tags
+/*          Flexbox footer solution?
+*/
+
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*           HTML tags
  */
 header {
     position: fixed;
@@ -44,31 +43,38 @@ header {
     width: 100%;
     border-bottom: solid 2px #cccccc;
     background-color: #ffffff;
-    /* margin-bottom: 100px; */
-    /* clear: both; */
+    clear: both;
 }
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     height: 75px;
     width: 100%;
+    margin: 0;
     text-align: center;
     background-color: #666666;
+    border-top: #4aaaa5 solid 8px;
+    z-index: 1; 
 }
-
 img {
-    padding: 0 25px 25px 0; }
-
-a { text-decoration: none; }
-
-p {
-    padding: 5px;
-    font-size: 6;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #777777; 
+    padding: 8px 30px 20px 0;
+    clear: both; 
 }
-
+a { text-decoration: none; 
+}
+h1 { 
+    margin: 0; 
+}
+h3 {
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    padding: 0 5px 5px 5px;
+    font-size: 20px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*                      Custom Containers
@@ -76,19 +82,62 @@ p {
 .containerone {
     width: 960px;
     margin: 0 auto;
+    /* clear: both; */
+    z-index: 3;
 }
 .containertwo {
+    width: 960px;
+    margin: 175px auto 100px auto;
+    padding: 10px 30px 30px 30px;
     border: 1px solid #dddddd;
     background-color: #ffffff;
-    width: 960px;
-    padding: 10px 30px 30px 30px;
-    margin: 175px auto 0 auto;
+    z-index: 2;
 }
 
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*              Custom Paddings / Margins / Border
+ */
+ .bordermenuleft {
+    border-left: 1px solid #dddddd;
+    border-left-style: 50%;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+.bordermenuright {
+    border-right: 1px solid #dddddd;
+    border-right-style: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    padding-top: 10px;
+}
+
+.paddingall10 {
+    padding: 10px;
+    margin-top: 25px;
+}
+.paddingbottom20 {
+    padding-bottom: 20px;
+}
+.texttobottom {
+    margin-top: 50px;
+}
+.margintopbottom {
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+.bottomborder {
+    border-bottom: 3px solid #dddddd;
+}
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*                      Custom Fonts
  */
+
+ .notextdecoration {
+    text-decoration: none;  
+}
 .headerfont {
     font-family: 'Georgia', Times, Times New Roman, serif;
 }
@@ -106,38 +155,56 @@ p {
 }
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*              Custom Paddings / Margins / Border
+/*                      -
  */
- .tabsborder {
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #cccccc;
-    margin: 0 10px;
-    padding: 10px 20px 10px 20px;
+
+ .textbox1 {
+     width: 100%;
+     height: 30px;
+     display: block;
+ }
+ #textarea1 {
+     width: 100%;
+     height: 200px;
+     display: block;
+ }
+.displayimage {
+    display: image;
 }
-.padding10 {
-    padding: 10px;
-}
-.paddingtop35 {
-    padding: 35px;
-}
-.bottomborder {
-    border-bottom: 3px solid #dddddd;
-}
-.paddingbottom20 {
-    padding-bottom: 20px;
-}
-.notextdecoration {
-    text-decoration: none;  
+
+button {
+    background-color: #4aaaa5;
+    color: white;
+    padding: 8px 24px;
+    margin-top: 10px;
 }
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*                      Custom trim
+/*                   PORTFOLIO PAGE    -
  */
- .tealtrim {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 85px;
-    background-color: #4aaaa5;
+
+
+
+.picturerelativebanner {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 300px;
+    margin-right: 100px;
 }
+.tealbanner {
+    position: absolute;
+    top: 150px;
+    background-color: #4aaaa5;
+    height: 60px;
+    width:  300px;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    
+    
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~END~~~~~~~~~~~~~~~~~ */
