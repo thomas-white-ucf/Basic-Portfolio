@@ -16,7 +16,7 @@
 }
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*          Flexbox footer solution?
+/*          Flexbox footer solution
 */
 
 html, body {
@@ -97,22 +97,26 @@ p {
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*              Custom Paddings / Margins / Border
  */
- .bordermenuleft {
-    border-left: 1px solid #dddddd;
-    border-left-style: 50%;
-    overflow: hidden;
-    margin-left: 20px;
-    margin-top: 20px;
-    padding-top: 10px;
-}
-.bordermenuright {
-    border-right: 1px solid #dddddd;
-    border-right-style: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-    padding-top: 10px;
-}
 
+ .relativeborder {
+    position: relative;
+    padding: 10px 50px;
+    /* background-color: #EEEEEE; */
+}
+.relativeborder:after {
+    content: '';
+    position: absolute;
+    left: -1ex;
+    height: 50%;
+    border-right: 1px solid #e9e6e6;
+}
+.sizebox {
+    margin-left: 1ex;
+    margin-right: 1ex;
+}
+.bottomborder {
+    border-bottom: 3px solid #dddddd;
+}
 .paddingall10 {
     padding: 10px;
     margin-top: 25px;
@@ -127,9 +131,7 @@ p {
     margin-top: 20px;
     margin-bottom: 35px;
 }
-.bottomborder {
-    border-bottom: 3px solid #dddddd;
-}
+
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*                      Custom Fonts
@@ -155,7 +157,7 @@ p {
 }
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*                      -
+/*                   CONTACT PAGE -
  */
 
  .textbox1 {
@@ -171,7 +173,6 @@ p {
 .displayimage {
     display: image;
 }
-
 button {
     background-color: #4aaaa5;
     color: white;
@@ -182,8 +183,6 @@ button {
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*                   PORTFOLIO PAGE    -
  */
-
-
 
 .picturerelativebanner {
     position: relative;
@@ -202,8 +201,6 @@ button {
     text-align: center;
     color: white;
     font-size: 30px;
-    
-    
 }
 
 
